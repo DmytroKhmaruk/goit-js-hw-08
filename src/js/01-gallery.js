@@ -25,7 +25,7 @@ const imgHtml = galleryItems.map(img => {
 
 gallery.insertAdjacentHTML('afterbegin', imgHtml);
 gallery.addEventListener('click', onGalleryClick);
-
+  
 function onGalleryClick(event) {
   event.preventDefault();
   if (event.target === event.currentTarget) {
@@ -34,10 +34,11 @@ function onGalleryClick(event) {
   const image = event.target;
   openModal(image.dataset.source);
 }
-    
+
+const lightbox = new SimpleLightbox('.gallery a');
+
 function openModal(src) {
-  const lightbox = new SimpleLightbox('.gallery a');
-  lightbox.open();
+  lightbox.open(src); 
 }
 
 console.log(galleryItems);
