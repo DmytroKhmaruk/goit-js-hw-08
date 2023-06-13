@@ -40,6 +40,4 @@ function handleSubmit(event) {
 
   emailInput.value = '';
   messageInput.value = '';
-
-  console.log(formData);
 }

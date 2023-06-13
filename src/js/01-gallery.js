@@ -1,12 +1,6 @@
-// Add imports above this line
 import { galleryItems } from './gallery-items';
-// Change code below this line
 import SimpleLightbox from 'simplelightbox';
 import "simplelightbox/dist/simple-lightbox.min.css";
-
-console.log(galleryItems);
-
-console.log(SimpleLightbox)
 
 const gallery = document.querySelector('.gallery');
 
@@ -24,21 +18,7 @@ const imgHtml = galleryItems.map(img => {
 }).join('');
 
 gallery.insertAdjacentHTML('afterbegin', imgHtml);
-gallery.addEventListener('click', onGalleryClick);
-  
-function onGalleryClick(event) {
-  event.preventDefault();
-  if (event.target === event.currentTarget) {
-    return;
-  }
-  const image = event.target;
-  openModal(image.dataset.source);
-}
 
-const lightbox = new SimpleLightbox('.gallery a');
-
-function openModal(src) {
-  lightbox.open(src); 
-}
-
-console.log(galleryItems);
+const lightbox = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+  });

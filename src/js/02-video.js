@@ -1,7 +1,5 @@
 import Player from '@vimeo/player';
 import throttle from 'lodash.throttle';
-console.log(Player);
-console.log(throttle);
 
 const player = new Player('vimeo-player');
 const currentTimeKey = 'videoplayer-current-time';
